@@ -90,7 +90,7 @@ if (menuToggle && navigation) {
 }
 
 const navLinks = Array.from(document.querySelectorAll('.primary-nav a[href^="#"]'));
-const observedSections = navLinks
+const sectionLinks = navLinks
   .map((link) => ({
     link,
     section: document.querySelector(link.getAttribute("href"))
@@ -98,7 +98,7 @@ const observedSections = navLinks
   .filter((item) => item.section);
 
 function markActive(id) {
-  observedSections.forEach(({ link, section }) => {
+  sectionLinks.forEach(({ link, section }) => {
     if (section.id === id) {
       link.setAttribute("aria-current", "true");
     } else {
@@ -107,18 +107,31 @@ function markActive(id) {
   });
 }
 
-if ("IntersectionObserver" in window) {
-  const visibility = new Map();
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => visibility.set(entry.target.id, entry.intersectionRatio));
-    const active = Array.from(visibility.entries())
-      .filter(([, ratio]) => ratio > 0)
-      .sort((a, b) => b[1] - a[1])[0];
-    if (active) markActive(active[0]);
-  }, {
-    rootMargin: "-20% 0px -55% 0px",
-    threshold: [0, 0.2, 0.5, 0.8]
+let navFramePending = false;
+
+function updateActiveNavigation() {
+  navFramePending = false;
+  const atPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+  const marker = window.scrollY + window.innerHeight * 0.38;
+  let activeId = "";
+
+  sectionLinks.forEach(({ section }) => {
+    if (section.offsetTop <= marker) activeId = section.id;
   });
 
-  observedSections.forEach(({ section }) => observer.observe(section));
+  if (atPageEnd && sectionLinks.length) {
+    activeId = sectionLinks[sectionLinks.length - 1].section.id;
+  }
+
+  markActive(activeId);
 }
+
+window.addEventListener("scroll", () => {
+  if (!navFramePending) {
+    navFramePending = true;
+    window.requestAnimationFrame(updateActiveNavigation);
+  }
+}, { passive: true });
+
+window.addEventListener("resize", updateActiveNavigation);
+updateActiveNavigation();
