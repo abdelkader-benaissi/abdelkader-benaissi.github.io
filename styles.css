@@ -586,6 +586,13 @@ body.light-theme .status-pill {
   font-size: 0.88rem;
 }
 
+.project-card .project-status {
+  margin-top: 0.85rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--accent);
+  font-size: 0.84rem;
+}
+
 .text-link {
   font-size: 0.86rem;
   color: var(--accent-strong);
@@ -847,55 +854,55 @@ body.light-theme .project-card:hover {
    SCROLL-TRIGGERED ANIMATIONS
    ============================ */
 
-.section {
+.js .section {
   opacity: 0;
   transform: translateY(32px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.section.visible {
+.js .section.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Staggered card animations */
-.section.visible .card,
-.section.visible .timeline-item {
+.js .section.visible .card,
+.js .section.visible .timeline-item {
   animation: cardReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.section.visible .card:nth-child(1),
-.section.visible .timeline-item:nth-child(1) {
+.js .section.visible .card:nth-child(1),
+.js .section.visible .timeline-item:nth-child(1) {
   animation-delay: 0.05s;
 }
 
-.section.visible .card:nth-child(2),
-.section.visible .timeline-item:nth-child(2) {
+.js .section.visible .card:nth-child(2),
+.js .section.visible .timeline-item:nth-child(2) {
   animation-delay: 0.12s;
 }
 
-.section.visible .card:nth-child(3) {
+.js .section.visible .card:nth-child(3) {
   animation-delay: 0.19s;
 }
 
-.section.visible .card:nth-child(4) {
+.js .section.visible .card:nth-child(4) {
   animation-delay: 0.26s;
 }
 
-.section.visible .card:nth-child(5) {
+.js .section.visible .card:nth-child(5) {
   animation-delay: 0.33s;
 }
 
-.section.visible .card:nth-child(6) {
+.js .section.visible .card:nth-child(6) {
   animation-delay: 0.40s;
 }
 
-.section.visible .card:nth-child(7) {
+.js .section.visible .card:nth-child(7) {
   animation-delay: 0.47s;
 }
 
-.section.visible .card:nth-child(8) {
+.js .section.visible .card:nth-child(8) {
   animation-delay: 0.54s;
 }
 
@@ -1023,4 +1030,29 @@ body.light-theme .hero::before {
 
 .project-card .project-link:hover .arrow {
   transform: translateX(3px);
+}
+
+/* Keyboard and motion accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .section {
+    opacity: 1;
+    transform: none;
+  }
 }
