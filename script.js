@@ -111,8 +111,8 @@ let navFramePending = false;
 
 function updateActiveNavigation() {
   navFramePending = false;
-  const atPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
-  const marker = window.scrollY + window.innerHeight * 0.38;
+  const atPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 96;
+  const marker = window.scrollY + window.innerHeight * 0.45;
   let activeId = "";
 
   sectionLinks.forEach(({ section }) => {
