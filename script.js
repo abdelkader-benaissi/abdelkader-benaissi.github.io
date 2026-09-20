@@ -1,146 +1,124 @@
 document.documentElement.classList.add("js");
 
-// Theme toggle & year
-const body = document.body;
+const root = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
 const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-const yearSpan = document.getElementById("year");
+const navigation = document.getElementById("primaryNavigation");
+const year = document.getElementById("year");
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+const themeKey = "portfolio-theme";
 
-// Set current year
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
-
-// Detect system theme preference and apply it
-const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-// Load theme from localStorage or use system preference
-const storedTheme = localStorage.getItem("theme");
-if (storedTheme === "light") {
-  body.classList.remove("dark-theme");
-  body.classList.add("light-theme");
-  if (themeToggle) themeToggle.textContent = "☀";
-} else if (storedTheme === "dark" || (storedTheme === null && systemPrefersDark)) {
-  body.classList.remove("light-theme");
-  body.classList.add("dark-theme");
-  if (themeToggle) themeToggle.textContent = "☾";
-} else {
-  body.classList.remove("dark-theme");
-  body.classList.add("light-theme");
-  if (themeToggle) themeToggle.textContent = "☀";
-}
-
-if (themeToggle) {
-  themeToggle.setAttribute("aria-pressed", String(body.classList.contains("dark-theme")));
-}
-
-function toggleTheme() {
-  if (body.classList.contains("dark-theme")) {
-    body.classList.remove("dark-theme");
-    body.classList.add("light-theme");
-    localStorage.setItem("theme", "light");
-    themeToggle.textContent = "☀";
-    themeToggle.setAttribute("aria-pressed", "false");
-  } else {
-    body.classList.remove("light-theme");
-    body.classList.add("dark-theme");
-    localStorage.setItem("theme", "dark");
-    themeToggle.textContent = "☾";
-    themeToggle.setAttribute("aria-pressed", "true");
+function readStoredTheme() {
+  try {
+    return localStorage.getItem(themeKey);
+  } catch {
+    return null;
   }
 }
 
+function storeTheme(theme) {
+  try {
+    localStorage.setItem(themeKey, theme);
+  } catch {
+    // The selected theme still applies for the current page view.
+  }
+}
+
+function applyTheme(theme) {
+  root.dataset.theme = theme;
+  const nextTheme = theme === "dark" ? "light" : "dark";
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-label", "Switch to " + nextTheme + " theme");
+    themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+  }
+
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta) {
+    themeMeta.setAttribute("content", theme === "dark" ? "#11130f" : "#f3f1ec");
+  }
+}
+
+const storedTheme = readStoredTheme();
+applyTheme(storedTheme === "light" || storedTheme === "dark"
+  ? storedTheme
+  : systemTheme.matches ? "dark" : "light");
+
 if (themeToggle) {
-  themeToggle.addEventListener("click", toggleTheme);
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+    storeTheme(nextTheme);
+  });
 }
 
-// Mobile menu functionality
-if (menuToggle && navLinks) {
-  menuToggle.setAttribute("aria-expanded", "false");
+systemTheme.addEventListener("change", (event) => {
+  if (!readStoredTheme()) {
+    applyTheme(event.matches ? "dark" : "light");
+  }
+});
+
+if (year) {
+  year.textContent = String(new Date().getFullYear());
+}
+
+function setMenu(open) {
+  if (!menuToggle || !navigation) return;
+  navigation.classList.toggle("nav-open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  root.classList.toggle("nav-is-open", open);
+}
+
+if (menuToggle && navigation) {
   menuToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("nav-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
   });
 
-  // Close on link click (mobile)
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("nav-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    });
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenu(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMenu(false);
+      menuToggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 860) setMenu(false);
   });
 }
 
-// ============================
-// SCROLL-TRIGGERED SECTION REVEAL
-// ============================
+const navLinks = Array.from(document.querySelectorAll('.primary-nav a[href^="#"]'));
+const observedSections = navLinks
+  .map((link) => ({
+    link,
+    section: document.querySelector(link.getAttribute("href"))
+  }))
+  .filter((item) => item.section);
 
-const sections = document.querySelectorAll(".section");
+function markActive(id) {
+  observedSections.forEach(({ link, section }) => {
+    if (section.id === id) {
+      link.setAttribute("aria-current", "true");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
 
 if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          sectionObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
-  );
-
-  sections.forEach((section) => sectionObserver.observe(section));
-} else {
-  sections.forEach((section) => section.classList.add("visible"));
-}
-
-// ============================
-// ACTIVE NAV LINK HIGHLIGHTING
-// ============================
-
-const navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
-const sectionTargets = [];
-
-navAnchors.forEach((anchor) => {
-  const id = anchor.getAttribute("href").substring(1);
-  const el = document.getElementById(id);
-  if (el) sectionTargets.push({ anchor, el });
-});
-
-function updateActiveNav() {
-  const scrollY = window.scrollY + 120;
-
-  let currentSection = null;
-  for (const { anchor, el } of sectionTargets) {
-    if (el.offsetTop <= scrollY) {
-      currentSection = anchor;
-    }
-  }
-
-  navAnchors.forEach((a) => a.classList.remove("active"));
-  if (currentSection) currentSection.classList.add("active");
-}
-
-window.addEventListener("scroll", updateActiveNav, { passive: true });
-updateActiveNav();
-
-// ============================
-// SMOOTH SCROLL FOR NAV LINKS
-// ============================
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const targetId = this.getAttribute("href").substring(1);
-    const targetEl = document.getElementById(targetId);
-    if (targetEl) {
-      e.preventDefault();
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      targetEl.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-
-      // Update URL without jumping
-      history.pushState(null, null, `#${targetId}`);
-    }
+  const visibility = new Map();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => visibility.set(entry.target.id, entry.intersectionRatio));
+    const active = Array.from(visibility.entries())
+      .filter(([, ratio]) => ratio > 0)
+      .sort((a, b) => b[1] - a[1])[0];
+    if (active) markActive(active[0]);
+  }, {
+    rootMargin: "-20% 0px -55% 0px",
+    threshold: [0, 0.2, 0.5, 0.8]
   });
-});
+
+  observedSections.forEach(({ section }) => observer.observe(section));
+}

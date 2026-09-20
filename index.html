@@ -1,476 +1,396 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Abdelkader Benaissi - Systems & Security Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Portfolio of Abdelkader Benaissi - systems security, DevOps automation, cloud, and Kubernetes engineering." />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdelkader Benaissi — Systems & Security Engineer</title>
+  <meta name="description" content="Systems and Security Engineer working across PKI, enterprise infrastructure, security operations, automation, cloud, and Kubernetes.">
+  <meta name="theme-color" content="#f3f1ec">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Abdelkader Benaissi — Systems & Security Engineer">
+  <meta property="og:description" content="Selected infrastructure, security, cloud, and Kubernetes work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdelkader-benaissi.github.io/">
+  <link rel="canonical" href="https://abdelkader-benaissi.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
 
-<body class="dark-theme">
-  <header class="top-nav">
-    <div class="nav-inner container">
-      <div class="logo">
-        <span class="logo-mark">AB</span>
-        <span class="logo-text">Security · Systems · DevOps</span>
-      </div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">About</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Abdelkader Benaissi, home">
+        <span class="brand-mark" aria-hidden="true">AB</span>
+        <span class="brand-name">
+          <strong>Abdelkader Benaissi</strong>
+          <small>Systems / Security</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" id="primaryNavigation" aria-label="Primary navigation">
         <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#certs">Certifications</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#work">Selected work</a>
+        <a href="#credentials">Credentials</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-        <button id="themeToggle" class="icon-button" aria-label="Toggle theme">
-          ☾
+      <div class="header-actions">
+        <button class="theme-control" id="themeToggle" type="button" aria-label="Switch color theme">
+          <span class="theme-symbol" aria-hidden="true">◐</span>
+          <span>Theme</span>
         </button>
-        <button id="menuToggle" class="icon-button menu-button" aria-label="Toggle menu">
-          ☰
+        <button class="menu-control" id="menuToggle" type="button" aria-controls="primaryNavigation" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero container" id="top">
-      <div class="hero-text">
-        <p class="eyebrow">Systems & Security Engineer · DevOps Automation</p>
-        <h1>Hi, I'm <span class="accent">Abdelkader BENAISSI</span>.</h1>
-        <p class="hero-subtitle">
-          Systems and Security Engineer with 2+ years of experience operating Linux and Windows infrastructure,
-          national PKI services, Active Directory, virtualization, SIEM, backup platforms, and containerized
-          workloads. I automate operational controls with PowerShell, Bash, Terraform, Ansible, and GitHub Actions.
-        </p>
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-index mono">
+        <span>Portfolio / 2026</span>
+        <span>Algiers, Algeria</span>
+      </div>
 
-        <div class="hero-cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn ghost" href="assets/Abdelkader_Benaissi_CV.pdf" download>Master CV</a>
-          <a class="btn ghost" href="assets/Abdelkader_Benaissi_Systems_Security_CV.pdf" download>Security CV</a>
-          <a class="btn ghost" href="assets/Abdelkader_Benaissi_DevOps_CV.pdf" download>DevOps CV</a>
-        </div>
-
-        <div class="hero-meta">
-          <div>
-            <span class="meta-label">Current Role</span>
-            <span class="meta-value">Systems Security Engineer – AGCE (Government Authority for Electronic
-              Certification)</span>
-          </div>
-          <div>
-            <span class="meta-label">Location</span>
-            <span class="meta-value">Algiers, Algeria · Open to remote</span>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Systems &amp; Security Engineer</p>
+          <h1>
+            Secure systems.<br>
+            <span>Operational evidence.</span>
+          </h1>
+          <p class="hero-summary">
+            I operate Linux and Windows infrastructure, national PKI services, Active Directory,
+            virtualization, SIEM, backup platforms, and containerized workloads. I build automation
+            that makes infrastructure easier to verify, recover, and maintain.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="https://github.com/abdelkader-benaissi" target="_blank" rel="noopener noreferrer">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
+
+        <aside class="hero-brief" aria-label="Professional overview">
+          <div class="brief-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Open to relevant engineering roles
+          </div>
+          <dl>
+            <div>
+              <dt>Current role</dt>
+              <dd>Systems Security Engineer</dd>
+            </div>
+            <div>
+              <dt>Environment</dt>
+              <dd>Government PKI and enterprise infrastructure</dd>
+            </div>
+            <div>
+              <dt>Core scope</dt>
+              <dd>Identity, systems, virtualization, detection, automation</dd>
+            </div>
+            <div>
+              <dt>Working languages</dt>
+              <dd>Arabic · English · French</dd>
+            </div>
+          </dl>
+        </aside>
       </div>
 
-      <div class="hero-card">
-        <div class="status-pill">
-          <span class="status-dot"></span> Open to opportunities
+      <div class="hero-principles" aria-label="Engineering principles">
+        <div>
+          <span class="mono">01</span>
+          <strong>Secure by design</strong>
+          <p>Identity, least privilege, segmentation, and hardening are architecture decisions.</p>
         </div>
-        <h2>Core Profile</h2>
-        <ul class="hero-list">
-          <li>PKI and Active Directory Certificate Services (AD CS)</li>
-          <li>Linux, Windows Server, AD DS, DNS, and Group Policy</li>
-          <li>VMware vSphere/ESXi, Hyper-V, and Dell iDRAC</li>
-          <li>Wazuh, FortiSIEM, network security, and hardening</li>
-          <li>PowerShell, Bash, Terraform, Ansible, and GitHub Actions</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section container" id="about">
-      <div class="section-header">
-        <h2>About</h2>
-        <p>A quick overview of how I approach security, systems, and operations.</p>
-      </div>
-
-      <div class="grid two-col">
-        <div class="card">
-          <h3>Who I Am</h3>
-          <p>
-            I'm a Security Engineer & Systems Engineer with hands-on experience in enterprise
-            environments, PKI, virtualization, Active Directory, and network security.
-            I focus on building secure, reliable infrastructure with strong operational
-            practices and clear documentation.
-          </p>
-          <p>
-            My work spans national electronic certification, enterprise infrastructure,
-            production Linux operations, and evidence-driven cloud and Kubernetes labs.
-          </p>
+        <div>
+          <span class="mono">02</span>
+          <strong>Automate repeatable work</strong>
+          <p>PowerShell, Bash, Terraform, Ansible, and CI replace fragile manual routines.</p>
         </div>
-        <div class="card">
-          <h3>How I Work</h3>
-          <ul class="bullet-list">
-            <li>Align security with business and regulatory requirements (ISO 27001 mindset).</li>
-            <li>Automate wherever possible: backups, assessments, and reporting.</li>
-            <li>Integrate SIEM, monitoring, and logging for real-time visibility.</li>
-            <li>Document architectures, procedures, and incident playbooks for repeatability.</li>
-          </ul>
+        <div>
+          <span class="mono">03</span>
+          <strong>Prove the outcome</strong>
+          <p>Health checks, tests, observability, runbooks, and explicit evidence boundaries.</p>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section container" id="experience">
-      <div class="section-header">
-        <h2>Experience</h2>
-        <p>Security & systems roles across government and enterprise environments.</p>
-      </div>
+    <section class="section shell" id="experience">
+      <header class="section-heading">
+        <p class="section-number mono">01 / Experience</p>
+        <h2>Production responsibility,<br>not tool collecting.</h2>
+        <p>Hands-on systems and security work across government and enterprise environments.</p>
+      </header>
 
-      <div class="timeline">
-        <!-- Current Role -->
-        <article class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
+      <div class="experience-list">
+        <article class="role">
+          <div class="role-meta">
+            <p class="mono">Aug 2025 — Present</p>
+            <p>Algiers, Algeria</p>
+          </div>
+          <div class="role-body">
+            <p class="role-organization">Government Authority for Electronic Certification · AGCE</p>
             <h3>Systems Security Engineer</h3>
-            <p class="timeline-meta">
-              Government Authority for Electronic Certification AGCE · Aug 2025 – Present · Algiers, Algeria
+            <p class="role-intro">
+              Supporting national electronic certification infrastructure and the systems that keep
+              government trust services available and controlled.
             </p>
-            <ul class="bullet-list">
-              <li>
-                Support national electronic certification infrastructure (PKI) for government institutions.
-              </li>
-              <li>
-                Manage Windows and Linux server environments, AD DS, DNS, Group Policy, and domain-controller replication.
-              </li>
-              <li>
-                Administer VMware vSphere/ESXi and Hyper-V platforms; manage physical-server health through Dell iDRAC.
-              </li>
-              <li>
-                Ensure compliance with government security standards, and apply security policies and protocols.
-              </li>
-              <li>
-                Manage enterprise-grade backup operations for critical government data.
-              </li>
-              <li>
-                Automate repetitive tasks and infrastructure workflows using PowerShell scripting and API integrations.
-              </li>
+            <ul class="detail-list">
+              <li>Operate Windows and Linux servers, AD DS, DNS, Group Policy, and domain-controller replication.</li>
+              <li>Support PKI operations and Active Directory Certificate Services while applying government security controls.</li>
+              <li>Administer VMware vSphere/ESXi and Hyper-V environments and monitor physical-server health through Dell iDRAC.</li>
+              <li>Run enterprise backup operations and automate infrastructure workflows with PowerShell and APIs.</li>
             </ul>
-            <div class="chips small">
-              <span>PKI & AD CS</span>
-              <span>AD, DNS & GPOs</span>
-              <span>vSphere & ESXi</span>
-              <span>Hyper-V</span>
-              <span>vCenter & iDRAC</span>
-              <span>PowerShell</span>
-              <span>Backup & Storage</span>
+            <div class="role-tags" aria-label="Role technologies">
+              <span>PKI / AD CS</span><span>AD DS</span><span>vSphere</span><span>Hyper-V</span><span>PowerShell</span><span>Backup</span>
             </div>
           </div>
         </article>
 
-        <!-- Previous Role -->
-        <article class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3>System Administrator & IT Operations Specialist</h3>
-            <p class="timeline-meta">
-              Shabakett Core · Aug 2024 – Aug 2025 · Algiers, Algeria
+        <article class="role">
+          <div class="role-meta">
+            <p class="mono">Aug 2024 — Aug 2025</p>
+            <p>Algiers, Algeria</p>
+          </div>
+          <div class="role-body">
+            <p class="role-organization">Shabakett Core</p>
+            <h3>System Administrator &amp; IT Operations Specialist</h3>
+            <p class="role-intro">
+              Managed production Linux infrastructure, containerized applications, operational
+              security, backup routines, and incident troubleshooting.
             </p>
-            <ul class="bullet-list">
-              <li>
-                Managed production Linux server environments, including deployment, configuration, and performance tuning.
-              </li>
-              <li>
-                Deployed and operated containerized applications using Docker in production Linux environments.
-              </li>
-              <li>
-                Configured Linux firewalls, performed security reviews, and monitored system performance and availability.
-              </li>
-              <li>
-                Automated backup strategies and maintained disaster-recovery procedures using Linux-native tooling.
-              </li>
-              <li>
-                Worked with cross-functional teams to troubleshoot issues while maintaining detailed system documentation.
-              </li>
+            <ul class="detail-list">
+              <li>Deployed, configured, monitored, and tuned production Linux systems and Docker workloads.</li>
+              <li>Configured Linux firewalls, performed security reviews, and tracked system performance and availability.</li>
+              <li>Automated backup routines and maintained disaster-recovery procedures with Linux-native tooling.</li>
+              <li>Resolved cross-functional incidents and maintained operational documentation.</li>
             </ul>
-            <div class="chips small">
-              <span>Linux</span>
-              <span>Docker</span>
-              <span>pfSense & UFW</span>
-              <span>SSH & Bash</span>
-              <span>Backup & DR</span>
-              <span>Documentation</span>
+            <div class="role-tags" aria-label="Role technologies">
+              <span>Linux</span><span>Docker</span><span>pfSense</span><span>UFW</span><span>Bash</span><span>Backup / DR</span>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section class="section container" id="education">
-      <div class="section-header">
-        <h2>Education</h2>
-        <p>Formal academic background in information systems and software engineering.</p>
-      </div>
-
-      <div class="grid two-col">
-        <div class="card">
-          <h3>Master's degree (MSc), Information Systems and Software Engineering</h3>
-          <p class="text-muted">University of Bouira, Algeria · 2023</p>
-        </div>
-        <div class="card">
-          <h3>Licence (Bachelor's degree), Information Systems and Software Engineering</h3>
-          <p class="text-muted">University of Bouira, Algeria · 2021</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="section container" id="certs">
-      <div class="section-header">
-        <h2>Certifications & Training</h2>
-      </div>
-
-      <div class="grid two-col">
-        <div class="card">
-          <h3>Security & Compliance</h3>
-          <ul class="bullet-list">
-            <li>CompTIA Security+ (2025)</li>
-            <li>ISO 27001:2022 Lead Auditor – Mastermind Assurance (2025)</li>
-            <li>Fortinet Certified Associate Cybersecurity – Fortinet (2025)</li>
-            <li>Fortinet FortiGate 7.4 Operator – Fortinet (2025)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Systems & Linux</h3>
-          <ul class="bullet-list">
-            <li>Mastering Linux System Administration – Udemy (2023)</li>
-            <li>Ongoing self-study in virtualization, SIEM, DevOps & cloud security.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section container" id="skills">
-      <div class="section-header">
-        <h2>Skills</h2>
-        <p>Security engineering, systems administration, enterprise infrastructure & automation.</p>
-      </div>
-
-      <div class="grid three-col">
-        <div class="card">
-          <h3>DevOps & Automation</h3>
-          <ul class="tag-list">
-            <li>Docker & Kubernetes</li>
-            <li>Git & CI/CD (GitHub Actions)</li>
-            <li>Terraform & Ansible</li>
-            <li>Shell Scripting & IaC</li>
-            <li>API Integration</li>
-            <li>PowerShell & Bash</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Cloud & Infra</h3>
-          <ul class="tag-list">
-            <li>GCP (Compute Engine, VPC, Firewall Rules)</li>
-            <li>vSphere & ESXi</li>
-            <li>Hyper-V</li>
-            <li>iDRAC Management</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Systems Admin</h3>
-          <ul class="tag-list">
-            <li>Linux Server & Windows Server</li>
-            <li>AD, DNS & GPOs</li>
-            <li>DCs Replication</li>
-            <li>Bash & PowerShell</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid three-col" style="margin-top: 1.4rem;">
-        <div class="card">
-          <h3>SIEM & SOC</h3>
-          <ul class="tag-list">
-            <li>Wazuh SIEM/XDR</li>
-            <li>FortiSIEM</li>
-            <li>SOC Dashboard Design</li>
-            <li>Log Analysis & FIM</li>
-            <li>MITRE ATT&CK</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Network Security & PKI</h3>
-          <ul class="tag-list">
-            <li>Firewall Management</li>
-            <li>pfSense & Cloudflare WAF</li>
-            <li>Nginx Reverse Proxy</li>
-            <li>SSH Hardening</li>
-            <li>CA Operations & Active Directory Certificate Services (AD CS)</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Offensive & Defense</h3>
-          <ul class="tag-list">
-            <li>Penetration Testing</li>
-            <li>Vulnerability Assessment</li>
-            <li>Web App Testing & Attack Simulation</li>
-            <li>Threat Analysis & Risk Assessment</li>
-            <li>Security Auditing & Hardening</li>
-            <li>CTF Player</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="skills-highlight">
-        <h3>Primary Tools & Technologies</h3>
-        <div class="chips">
-          <span>Linux</span>
-          <span>Windows Server</span>
-          <span>Active Directory</span>
-          <span>VMware vSphere & ESXi</span>
-          <span>Hyper-V</span>
-          <span>pfSense</span>
-          <span>Wazuh SIEM/XDR</span>
-          <span>FortiSIEM</span>
-          <span>Terraform</span>
-          <span>Ansible</span>
-          <span>Docker</span>
-          <span>Kubernetes</span>
-          <span>GitHub Actions</span>
-          <span>GCP</span>
-          <span>Bash</span>
-          <span>PowerShell</span>
-          <span>EMC Networker</span>
-        </div>
-
-        <div style="margin-top: 0.9rem;">
-          <h3 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Languages</h3>
-          <div class="chips">
-            <span>Arabic – Native</span>
-            <span>English – Advanced</span>
-            <span>French – Advanced</span>
+    <section class="section section-toned" id="capabilities">
+      <div class="shell">
+        <header class="section-heading split-heading">
+          <div>
+            <p class="section-number mono">02 / Capabilities</p>
+            <h2>Depth across the infrastructure lifecycle.</h2>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section container" id="projects">
-      <div class="section-header">
-        <h2>Selected Projects</h2>
-        <p>Each project states what is implemented and what has actually been verified.</p>
-      </div>
-
-      <div class="grid three-col">
-        <article class="card project-card">
-          <div class="pill">Kubernetes · Security · GitOps</div>
-          <h3>Secure Kubernetes Platform</h3>
-          <p>Reproducible Kind platform with Argo CD, Kyverno admission controls, Cilium default-deny networking, TLS, HPA, PDB, and observability.</p>
-          <p class="project-status"><strong>Verified:</strong> CI bootstraps the platform, confirms certificate readiness and GitOps health, and rejects a mutable image.</p>
-          <a class="project-link" href="https://github.com/abdelkader-benaissi/secure-kubernetes-platform" target="_blank" rel="noopener noreferrer">View repository <span class="arrow">→</span></a>
-        </article>
-
-        <article class="card project-card">
-          <div class="pill">Kubernetes · SRE</div>
-          <h3>Kubernetes SRE Lab</h3>
-          <p>Go API with PostgreSQL and Redis, availability and latency objectives, burn-rate alerts, probes, HPA, PDB, NetworkPolicies, runbooks, and controlled failure scripts.</p>
-          <p class="project-status"><strong>Verified:</strong> CI deploys the stack to Kind and passes an in-cluster readiness smoke test. Long-duration SLO attainment is not claimed.</p>
-          <a class="project-link" href="https://github.com/abdelkader-benaissi/k8s-sre-lab" target="_blank" rel="noopener noreferrer">View repository <span class="arrow">→</span></a>
-        </article>
-
-        <article class="card project-card">
-          <div class="pill">Kubernetes · HA · IaC</div>
-          <h3>Kubernetes High-Availability Lab</h3>
-          <p>Terraform/libvirt and Ansible topology with three stacked-etcd control-plane nodes, three workers, HAProxy, Keepalived, and Cilium.</p>
-          <p class="project-status"><strong>Boundary:</strong> static CI validation passes; live VIP failover, etcd quorum, and recovery evidence remain pending.</p>
-          <a class="project-link" href="https://github.com/abdelkader-benaissi/kubernetes-ha-lab" target="_blank" rel="noopener noreferrer">View repository <span class="arrow">→</span></a>
-        </article>
-
-        <article class="card project-card">
-          <div class="pill">AWS · Security Automation</div>
-          <h3>SentinelAWS</h3>
-          <p>Defense-in-depth three-tier AWS design with private compute/database tiers, GuardDuty, Security Hub, WAF, KMS, audit logging, and bounded containment automation.</p>
-          <p class="project-status"><strong>Boundary:</strong> source validation and automated tests pass; account-specific deployment evidence remains pending.</p>
-          <a class="project-link" href="https://github.com/abdelkader-benaissi/sentinelaws" target="_blank" rel="noopener noreferrer">View repository <span class="arrow">→</span></a>
-        </article>
-
-        <article class="card project-card">
-          <div class="pill">GCP · SIEM · Automation</div>
-          <h3>Automated SIEM Lab</h3>
-          <p>Four-VM segmented GCP lab with Terraform, Ansible, Wazuh, multi-OS agents, dashboard automation, and seven controlled MITRE ATT&CK simulations.</p>
-          <p class="project-status"><strong>Verified:</strong> deployment and alert screenshots are documented; CI validates Terraform and Ansible syntax and linting.</p>
-          <a class="project-link" href="https://github.com/abdelkader-benaissi/siem-lab" target="_blank" rel="noopener noreferrer">View repository <span class="arrow">→</span></a>
-        </article>
-
-        <article class="card project-card">
-          <div class="pill">DevOps · Observability</div>
-          <h3>Containerized Observability API</h3>
-          <p>Non-root Flask metrics service with Prometheus, an auto-provisioned Grafana dashboard, four alert rules, health checks, and 17 automated API tests.</p>
-          <p class="project-status"><strong>Verified:</strong> CI lints, tests, and builds; successful commits deploy with a post-rollout health check.</p>
-          <a class="project-link" href="https://github.com/abdelkader-benaissi/infra-monitor" target="_blank" rel="noopener noreferrer">View repository <span class="arrow">→</span></a>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section container" id="contact">
-      <div class="section-header">
-        <h2>Contact</h2>
-        <p>For systems, security, cloud, or DevOps roles, contact me directly.</p>
-      </div>
-
-      <div class="grid two-col contact-grid">
-        <div class="card contact-card">
-          <h3>Reach Out</h3>
           <p>
-            Open to relevant engineering roles in Algeria and remote-compatible positions.
+            The focus is operational control: build correctly, restrict deliberately, observe continuously,
+            and retain a credible recovery path.
           </p>
+        </header>
 
-          <ul class="contact-list">
-            <li><strong>Email:</strong> <a href="mailto:abdelkader.benaissi.28@gmail.com">abdelkader.benaissi.28@gmail.com</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/abdelkader-benaissi" target="_blank" rel="noopener noreferrer">github.com/abdelkader-benaissi</a>
-            </li>
-            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/abdelkader-benaissi"
-                target="_blank" rel="noopener noreferrer">linkedin.com/in/abdelkader-benaissi</a></li>
-          </ul>
+        <div class="capability-grid">
+          <article class="capability">
+            <span class="capability-index mono">A</span>
+            <h3>Infrastructure &amp; identity</h3>
+            <ul>
+              <li>Linux and Windows Server</li>
+              <li>AD DS, DNS, and Group Policy</li>
+              <li>PKI and AD CS operations</li>
+              <li>VMware vSphere / ESXi</li>
+              <li>Hyper-V and Dell iDRAC</li>
+              <li>Enterprise backup and recovery</li>
+            </ul>
+          </article>
+          <article class="capability">
+            <span class="capability-index mono">B</span>
+            <h3>Security &amp; visibility</h3>
+            <ul>
+              <li>Wazuh SIEM / XDR and FortiSIEM</li>
+              <li>Firewall policy and pfSense</li>
+              <li>System and SSH hardening</li>
+              <li>Log analysis and file integrity monitoring</li>
+              <li>Vulnerability and risk assessment</li>
+              <li>ISO 27001 control mindset</li>
+            </ul>
+          </article>
+          <article class="capability">
+            <span class="capability-index mono">C</span>
+            <h3>Automation &amp; delivery</h3>
+            <ul>
+              <li>PowerShell and Bash</li>
+              <li>Terraform and Ansible</li>
+              <li>Docker and Kubernetes</li>
+              <li>GitHub Actions CI/CD</li>
+              <li>GCP infrastructure</li>
+              <li>API-driven operations</li>
+            </ul>
+          </article>
         </div>
 
-        <form class="card contact-form" action="https://formspree.io/f/xwvngzwy" method="POST">
-          <h3>Quick Message</h3>
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required />
+        <div class="tool-line">
+          <span class="mono">Working set</span>
+          <p>Linux · Windows Server · Active Directory · VMware · Hyper-V · Wazuh · FortiSIEM · Terraform · Ansible · Docker · Kubernetes · GitHub Actions · GCP</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="work">
+      <header class="section-heading split-heading">
+        <div>
+          <p class="section-number mono">03 / Selected work</p>
+          <h2>Projects with explicit evidence boundaries.</h2>
+        </div>
+        <p>
+          Every entry separates implemented architecture from what CI or deployment evidence actually proves.
+        </p>
+      </header>
+
+      <div class="project-list">
+        <article class="project">
+          <div class="project-topline">
+            <span class="project-number mono">01</span>
+            <span class="project-domain mono">Kubernetes / Security / GitOps</span>
           </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
+          <h3><a href="https://github.com/abdelkader-benaissi/secure-kubernetes-platform" target="_blank" rel="noopener noreferrer">Secure Kubernetes Platform <span aria-hidden="true">↗</span></a></h3>
+          <p>Reproducible Kind platform with Argo CD, Kyverno admission controls, Cilium default-deny networking, TLS, HPA, PDB, and observability.</p>
+          <div class="evidence"><span>Verified</span> CI bootstraps the platform, confirms certificate and GitOps health, and rejects a mutable image.</div>
+        </article>
+
+        <article class="project">
+          <div class="project-topline">
+            <span class="project-number mono">02</span>
+            <span class="project-domain mono">Kubernetes / SRE</span>
           </div>
-          <div class="field">
-            <label for="msg">Message</label>
-            <textarea id="msg" name="message" rows="4" required></textarea>
+          <h3><a href="https://github.com/abdelkader-benaissi/k8s-sre-lab" target="_blank" rel="noopener noreferrer">Kubernetes SRE Lab <span aria-hidden="true">↗</span></a></h3>
+          <p>Go API with PostgreSQL and Redis, availability and latency objectives, burn-rate alerts, probes, HPA, PDB, NetworkPolicies, runbooks, and controlled failures.</p>
+          <div class="evidence"><span>Verified</span> CI deploys to Kind and passes an in-cluster readiness smoke test. Long-duration SLO attainment is not claimed.</div>
+        </article>
+
+        <article class="project">
+          <div class="project-topline">
+            <span class="project-number mono">03</span>
+            <span class="project-domain mono">Kubernetes / HA / IaC</span>
           </div>
-          <button type="submit" class="btn primary full-width">Send</button>
-        </form>
+          <h3><a href="https://github.com/abdelkader-benaissi/kubernetes-ha-lab" target="_blank" rel="noopener noreferrer">Kubernetes High-Availability Lab <span aria-hidden="true">↗</span></a></h3>
+          <p>Terraform/libvirt and Ansible topology with three stacked-etcd control-plane nodes, three workers, HAProxy, Keepalived, and Cilium.</p>
+          <div class="evidence evidence-bounded"><span>Boundary</span> Static CI validation passes; live VIP failover, etcd quorum, and recovery evidence remain pending.</div>
+        </article>
+
+        <article class="project">
+          <div class="project-topline">
+            <span class="project-number mono">04</span>
+            <span class="project-domain mono">AWS / Security automation</span>
+          </div>
+          <h3><a href="https://github.com/abdelkader-benaissi/sentinelaws" target="_blank" rel="noopener noreferrer">SentinelAWS <span aria-hidden="true">↗</span></a></h3>
+          <p>Defense-in-depth three-tier AWS design with private compute and database tiers, GuardDuty, Security Hub, WAF, KMS, audit logging, and bounded containment automation.</p>
+          <div class="evidence evidence-bounded"><span>Boundary</span> Source validation and automated tests pass; account-specific deployment evidence remains pending.</div>
+        </article>
+
+        <article class="project">
+          <div class="project-topline">
+            <span class="project-number mono">05</span>
+            <span class="project-domain mono">GCP / SIEM / Automation</span>
+          </div>
+          <h3><a href="https://github.com/abdelkader-benaissi/siem-lab" target="_blank" rel="noopener noreferrer">Automated SIEM Lab <span aria-hidden="true">↗</span></a></h3>
+          <p>Four-VM segmented GCP lab with Terraform, Ansible, Wazuh, multi-OS agents, dashboard automation, and seven controlled MITRE ATT&amp;CK simulations.</p>
+          <div class="evidence"><span>Verified</span> Deployment and alert screenshots are documented; CI validates Terraform and Ansible syntax and linting.</div>
+        </article>
+
+        <article class="project">
+          <div class="project-topline">
+            <span class="project-number mono">06</span>
+            <span class="project-domain mono">DevOps / Observability</span>
+          </div>
+          <h3><a href="https://github.com/abdelkader-benaissi/infra-monitor" target="_blank" rel="noopener noreferrer">Containerized Observability API <span aria-hidden="true">↗</span></a></h3>
+          <p>Non-root Flask metrics service with Prometheus, an auto-provisioned Grafana dashboard, four alert rules, health checks, and 17 automated API tests.</p>
+          <div class="evidence"><span>Verified</span> CI lints, tests, and builds. CD is gated on the successful CI commit and performs a post-rollout health check.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-toned" id="credentials">
+      <div class="shell credentials-grid">
+        <header class="section-heading">
+          <p class="section-number mono">04 / Credentials</p>
+          <h2>Formal grounding and continuous practice.</h2>
+        </header>
+
+        <div class="credential-column">
+          <h3 class="mono">Education</h3>
+          <article class="credential">
+            <span>2023</span>
+            <div>
+              <strong>Master's degree (MSc)</strong>
+              <p>Information Systems and Software Engineering · University of Bouira</p>
+            </div>
+          </article>
+          <article class="credential">
+            <span>2021</span>
+            <div>
+              <strong>Licence (Bachelor's degree)</strong>
+              <p>Information Systems and Software Engineering · University of Bouira</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="credential-column">
+          <h3 class="mono">Certifications</h3>
+          <article class="credential">
+            <span>2025</span>
+            <div><strong>CompTIA Security+</strong><p>CompTIA</p></div>
+          </article>
+          <article class="credential">
+            <span>2025</span>
+            <div><strong>ISO 27001:2022 Lead Auditor</strong><p>Mastermind Assurance</p></div>
+          </article>
+          <article class="credential">
+            <span>2025</span>
+            <div><strong>Certified Associate Cybersecurity</strong><p>Fortinet</p></div>
+          </article>
+          <article class="credential">
+            <span>2025</span>
+            <div><strong>FortiGate 7.4 Operator</strong><p>Fortinet</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="shell contact-grid">
+        <div>
+          <p class="section-number mono">05 / Contact</p>
+          <h2>Professional links.</h2>
+          <p>Systems, security, cloud, and DevOps opportunities in Algeria or remote-compatible environments.</p>
+        </div>
+        <div class="contact-links" aria-label="Professional profiles">
+          <a href="https://github.com/abdelkader-benaissi" target="_blank" rel="noopener noreferrer">
+            <span><small class="mono">Code &amp; projects</small>GitHub</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/abdelkader-benaissi" target="_blank" rel="noopener noreferrer">
+            <span><small class="mono">Professional profile</small>LinkedIn</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Abdelkader BENAISSI. All rights reserved.</span>
-      <a href="#top" class="text-link">Back to top ↑</a>
+    <div class="shell footer-inner">
+      <span>© <span id="year"></span> Abdelkader Benaissi</span>
+      <span class="mono">Systems · Security · Automation</span>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 </body>
-
 </html>
