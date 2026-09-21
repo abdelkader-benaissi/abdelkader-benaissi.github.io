@@ -1,39 +1,30 @@
-# abdou-009.github.io
+# abdelkader-benaissi.github.io
 
-Personal portfolio website for **Abdelkader BENAISSI** — Security Engineer · Systems Engineer · DevOps Engineer.
+Personal portfolio website for **Abdelkader Benaissi** — Systems & Security Engineer.
 
-🔗 **Live:** [abdelkader-benaissi.github.io](https://abdelkader-benaissi.github.io)
+**Live:** https://abdelkader-benaissi.github.io/
 
-## About
+## Focus
 
-A modern, responsive single-page portfolio showcasing my experience, certifications, skills, and projects in:
+- PKI and Active Directory Certificate Services
+- Windows and Linux infrastructure
+- Active Directory, DNS, and Group Policy
+- VMware vSphere/ESXi and Hyper-V
+- SIEM, EDR, firewall policy, and hardening
+- Terraform, Ansible, Docker, Kubernetes, and GCP
 
-- 🛡️ Security Engineering & Compliance (ISO 27001, CompTIA Security+)
-- 🔑 PKI & Certificate Authority Operations
-- 🖥️ Enterprise Infrastructure (AD, DNS, VMware, Hyper-V)
-- 📊 SIEM & Security Monitoring (FortiSIEM)
-- ⚙️ DevOps, Containers & Automation (Docker, Kubernetes, Bash)
+## Implementation
 
-## Tech Stack
+- Semantic HTML5
+- Responsive custom CSS
+- Vanilla JavaScript
+- Keyboard-accessible mobile navigation
+- Pointer-reactive card highlights with reduced-motion support
+- GitHub Pages hosting
 
-| Layer | Technology |
-|-------|-----------|
-| Structure | HTML5 |
-| Styling | Vanilla CSS (custom design tokens, dark/light theme) |
-| Interactivity | Vanilla JavaScript (scroll animations, theme toggle) |
-| Typography | [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts |
-| Contact Form | [Formspree](https://formspree.io) |
-| Hosting | GitHub Pages |
+## Contact
 
-## Features
+- GitHub: https://github.com/abdelkader-benaissi
+- LinkedIn: https://www.linkedin.com/in/abdelkader-benaissi
 
-- 🌗 Dark / Light theme toggle with system preference detection
-- 📱 Fully responsive (mobile, tablet, desktop)
-- ✨ Scroll-triggered section reveals with staggered card animations
-- 🎨 Card hover effects with gradient border glow
-- 🧭 Active nav link highlighting on scroll
-- 📬 Privacy-friendly contact form (email never exposed in source)
-
-## License
-
-© Abdelkader BENAISSI. All rights reserved.
+© Abdelkader Benaissi. All rights reserved.
